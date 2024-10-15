@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order - CODER'S CANTEEN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CODER'S CANTEEN  MIT </h1>
+        <div id="studentIdDisplay"></div>
+        <div id="studentNameDisplay"></div>
+        <div class="menu">
+            <h2>Menu</h2>
+            <ul id="menuList">
+                <li>Dosai - ₹30.00 <input type="number" min="0" id="quantity0" value="0"></li>
+                <li>Parota - ₹10.00 <input type="number" min="0" id="quantity1" value="0"></li>
+                <li>Idly - ₹5.00 <input type="number" min="0" id="quantity2" value="0"></li>
+                <li>Maggi - ₹25.00 <input type="number" min="0" id="quantity3" value="0"></li>
+                <li>Poori - ₹15.00 <input type="number" min="0" id="quantity4" value="0"></li>
+                <li>Milk - ₹10.00 <input type="number" min="0" id="quantity5" value="0"></li>
+                <li>Boost - ₹15.00 <input type="number" min="0" id="quantity6" value="0"></li>
+            </ul>
+        </div>
+        <div class="order">
+            <h2>Your Order</h2>
+            <div id="orderList"></div>
+            <div class="total">
+                <strong>Total Cost: ₹<span id="totalCost">0.00</span></strong>
+            </div>
+            <button id="placeOrder">Place Order</button>
+            <button id="printBill" style="display: none;">Print Bill</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

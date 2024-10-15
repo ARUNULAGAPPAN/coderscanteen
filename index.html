@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CODER'S CANTEEN</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .login-container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #e21d25;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #e21d25;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #c41519;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" id="studentID" placeholder="Enter your Student ID" required>
+            <input type="submit" value="Login">
+            <div class="error" id="errorMessage"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            const studentID = document.getElementById('studentID').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Check if the student ID is within the specified ranges
+            const idNumber = parseInt(studentID);
+            if ((idNumber >= 2023503000 && idNumber <= 2023503069) || 
+                (idNumber >= 2023503500 && idNumber <= 2023503590)) {
+                
+                // Store student ID in localStorage
+                localStorage.setItem('studentData', JSON.stringify({ id: studentID }));
+                
+                // Show success message and redirect
+                alert('Welcome to CODER\'S CANTEEN MIT!');
+                window.location.href = 'placeOrder.html'; // Update to your place order page
+            } else {
+                // Show error message
+                errorMessage.innerText = 'Invalid Student ID. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>
